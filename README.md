@@ -1,18 +1,10 @@
-# GPT2 for Chinese chitchat
-
-## UPDATE 2020.01.09
-添加50w闲聊语料与预训练模型的GoogleDrive的下载地址
-
-## UPDATE 2019.12.17
-基于微软的论文[DialoGPT:Large-Scale Generative Pre-training for Conversational Response Generation](https://arxiv.xilesou.top/pdf/1911.00536.pdf)添加了MMI Model(maximum mutual information scoring function),对dialogue model生成的多个response进行筛选
-
+# GPT2 for sentence generation
 
 ## 项目描述
-- 本项目使用GPT2模型对中文闲聊语料进行训练，使用 HuggingFace的[transformers](https://github.com/huggingface/transformers)实现GPT2模型的编写与训练。
-- 在闲暇时间用 [GPT2-Chinese](https://github.com/Morizeyao/GPT2-Chinese)模型训练了几个长文本的生成模型，并且精读了一遍作者的源码，获益匪浅，加深了自己对GPT2生成模型的一些理解，于是将GPT2模型用于闲聊对话的生成，非常感谢作者的分享。
+- 本项目使用GPT2模型对微信历史对话语料进行训练，使用 HuggingFace的[transformers](https://github.com/huggingface/transformers)实现GPT2模型的编写与训练。
+- 本项目初始目的为了完成根据句首输入词补全整句话。
 - 本项目中沿用了原项目中的部分结构和一些命名方式，同时也对很多代码细节做出了自己实现。
 - 解码器的逻辑使用了Temperature、Top-k Sampling和Nucleus Sampling等，可参考论文[The Curious Case of Neural Text Degeneration](https://arxiv.xilesou.top/pdf/1904.09751.pdf)
-- 根据微软的DialoGPT的思想，在项目中添加了互信息。训练了两个模型:Dialogue Model与MMI Model(maximum mutual information scoring function)。首先使用Dialogue Model生成多个候选response，然后使用MMI Model从候选response中，选取loss最小的作为最终的response
 - 代码中给出了许多详细的中文注释，方便大家更好地理解代码(能力有限，可能有些代码或注释有误，望大家不吝赐教)
 
 ## 运行环境
